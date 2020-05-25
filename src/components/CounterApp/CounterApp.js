@@ -1,19 +1,30 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
 
 import CounterView from './CounterView';
 import './CounterApp.css';
 
+
+const functions = new Set();
+
 const CounterApp = (props) => {
   const [count, setCount] = useState(0);
+  const [whatever, setWhatever] = useState(10); 
+
   const { title } = props;
 
   useEffect(() => {
     console.log('Calling USE EFFECT');
   }, [])
 
-  const increment = (step) => () => setCount(count + step)
+  // const increment = (step) => () => setCount(count + step)
+  // const doWhatever = () => setWhatever(whatever + 1);
   
+  const increment =useCallback()
+
+  functions.add(increment);
+  functions.add(doWhatever);
+
   return (
     <div>
       <div className="counter-app">
@@ -22,6 +33,8 @@ const CounterApp = (props) => {
           countValue={count} 
           handleIncrement={increment}
         />
+        <button onClick={doWhatever}>Do whatever</button>
+  <h1>Functions: {functions.size}</h1>
       </div>
     </div>
   )
