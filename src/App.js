@@ -3,7 +3,7 @@ import CounterApp from './components/CounterApp/CounterApp'
 
 const App = () => {
   return (
-    <CounterApp />
+    <CounterApp title="My Counter Application"/>
   )
 }
 
