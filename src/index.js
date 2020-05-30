@@ -3,6 +3,7 @@ import React from 'react';
 import App from './App.js'
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap/dist/js/bootstrap.min.js'
 
 
 // const h2Element =  React.createElement('h2', null, 'What a nice day');
