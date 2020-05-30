@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import CounterView from './CounterView';
 import './CounterApp.css';
 
-
+// set is object that keeps only unique data
 const functions = new Set();
 
 const CounterApp = (props) => {
@@ -17,14 +17,12 @@ const CounterApp = (props) => {
     console.log('Calling USE EFFECT');
   }, [])
 
-  // const increment = (step) => () => setCount(count + step)
-  // const doWhatever = () => setWhatever(whatever + 1);
+  const increment = useCallback((step) => () => setCount(count + step), [count])
+  const doWhatever = useCallback(() => setWhatever(whatever + 1), [whatever])
   
-  const increment =useCallback()
-
   functions.add(increment);
   functions.add(doWhatever);
-
+  
   return (
     <div>
       <div className="counter-app">
@@ -34,7 +32,7 @@ const CounterApp = (props) => {
           handleIncrement={increment}
         />
         <button onClick={doWhatever}>Do whatever</button>
-  <h1>Functions: {functions.size}</h1>
+        <h1>Functions: {functions.size}</h1>
       </div>
     </div>
   )
