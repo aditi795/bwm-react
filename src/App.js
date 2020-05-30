@@ -1,10 +1,12 @@
 import React from 'react';
-import CounterApp from './components/CounterApp/CounterApp'
-
+//import CounterApp from './components/CounterApp/CounterApp'
+import Header from './components/shared/header.js'
 const App = () => {
   return (
-    <CounterApp title="My Counter Application"/>
+      <div>
+        <Header/>
+      </div>
   )
 }
 
-export default App;
+export default App; 
