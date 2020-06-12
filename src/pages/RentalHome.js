@@ -41,10 +41,10 @@ class RentalHome extends React.Component {
     }
   }
 
-  renderRentals = (rentals) => 
-    rentals.map(rental => 
+  renderRentals = (rentals) =>
+    rentals.map(rental =>
       <div key={rental._id} className="col-md-3">
-        <RentalCard rental={rental}/>
+        <RentalCard rental={rental} />
       </div>
     );
 
@@ -52,15 +52,11 @@ class RentalHome extends React.Component {
     const { rentals } = this.state;
     return (
       <div className="card-list">
-        <div className="container">
-          <h1 className="page-title">Your Home All Around the World</h1>
-          <div className="row">
-            {
-              this.renderRentals(rentals)
-            }
-
-
-          </div>
+        <h1 className="page-title">Your Home All Around the World</h1>
+        <div className="row">
+          {
+            this.renderRentals(rentals)
+          }
         </div>
       </div>
 

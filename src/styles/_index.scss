@@ -1,9 +1,13 @@
 @import './colors.scss';
 @import './header.scss';
-@import './rental-homes';
+@import './rental-homes.scss';
 
 html, body {
   height: 100%;
+}
+
+.bwm-container {
+  padding-top: 70px;
 }
 
 .type- {
